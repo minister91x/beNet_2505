@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\BE_2505\BE_2505\bin\Debug\net6.0\BE_2505.exe
+C:\Users\Admin\source\repos\BE_2505\BE_2505\bin\Debug\net6.0\BE_2505.deps.json
+C:\Users\Admin\source\repos\BE_2505\BE_2505\bin\Debug\net6.0\BE_2505.runtimeconfig.json
+C:\Users\Admin\source\repos\BE_2505\BE_2505\bin\Debug\net6.0\BE_2505.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505\bin\Debug\net6.0\BE_2505.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\refint\BE_2505.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\BE_2505.genruntimeconfig.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505\obj\Debug\net6.0\ref\BE_2505.dll
