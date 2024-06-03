@@ -14,6 +14,69 @@ namespace ConsoleApp_NetFrameWork
         //    a = 100;
         //}
 
+        struct Student_Struct
+        {
+            // Thuộc tính
+            public string _name;
+            public int _id;
+            public HinhHoc _hinhhoc;
+
+
+            // Hàm khởi tạo - Không có kiểu dữ liệu trả về
+            public Student_Struct(string Name, int Id, HinhHoc hinhhoc)
+            {
+                this._name = Name;
+                this._id = Id;
+                this._hinhhoc = hinhhoc;
+            }
+
+            // Phương thức
+            public string Run()
+            {
+                return _name + " is running";
+            }
+        }
+
+
+
+        struct HinhHoc
+        {
+            public string _ten_hinh;
+            public int _loai_hinh;
+            public int _chieudai;
+            public int _chieurong;
+            public HinhHoc(string TenHinh, int LoaiHinh, int ChieuDai, int ChieuRong)
+            {
+                _ten_hinh = TenHinh;
+                _loai_hinh = LoaiHinh;
+                _chieudai = ChieuDai;
+                _chieurong = ChieuRong;
+            }
+            public int DienTich()
+            {
+                if (_loai_hinh == 1)
+                {
+                    return (_chieudai + _chieurong) * 2;
+                }
+
+                return 0;
+            }
+
+
+        }
+
+
+        enum TrangThai_GiaoDich
+        {
+            THANH_CONG = 1,
+            THATBAI = 2,
+            DA_HUY = 2
+        }
+
+        HinhHoc HinhCuaToi(HinhHoc hinhHoc)
+        {
+            return new HinhHoc();
+        }
 
         static int TinhTongHaiSo(int soThuNhat, int soThuHai)
         {
@@ -89,6 +152,7 @@ namespace ConsoleApp_NetFrameWork
 
             //Other code - no exeption
         }
+
 
 
         static void Main(string[] args)
@@ -170,8 +234,7 @@ namespace ConsoleApp_NetFrameWork
             //Console.WriteLine("=========BUOI 3===============");
 
             int soThuNhat = 0;
-            Console.WriteLine("nhap text");
-            var firstInput = Console.ReadLine();
+
             //var validateInput = CheckValidateInput(firstInput);
             //if (!validateInput)
             //{
@@ -187,28 +250,85 @@ namespace ConsoleApp_NetFrameWork
 
             int x1;
             // x_ref chính là tham chiếu của biến x1 
-            int result = ThamChieu_WithOut(out x1);
-            Console.WriteLine("x1 ThamChieu_WithOut {0},", x1);
-            Console.WriteLine("result ThamChieu_WithOut {0},", result);
+            //int result = ThamChieu_WithOut(out x1);
+            //Console.WriteLine("x1 ThamChieu_WithOut {0},", x1);
+            //Console.WriteLine("result ThamChieu_WithOut {0},", result);
 
-            int zero = 2;
-            try
-            {
-                UserInput(firstInput);
-            }
-            catch (DataTooLongExeption ex)
-            {
-                Console.WriteLine("Message :{0}", ex.Message);
-                Console.WriteLine("StackTrace :{0}", ex.StackTrace);
-                Console.WriteLine("Source :{0}", ex.Source);
-            }
-            finally
-            {
-                Console.WriteLine("finally finally");
-            }
-           
+            //int zero = 2;
+            //try
+            //{
+            //    UserInput(firstInput);
+            //}
+            //catch (DataTooLongExeption ex)
+            //{
+            //    Console.WriteLine("Message :{0}", ex.Message);
+            //    Console.WriteLine("StackTrace :{0}", ex.StackTrace);
+            //    Console.WriteLine("Source :{0}", ex.Source);
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("finally finally");
+            //}
 
-            // CTRL+ K + D
+
+            // buổi 4 
+
+            List<int> students = new List<int>()
+            {
+                1,2,3,6,7
+            };
+            char[] my_string = { 'H', 'e', 'l', 'l', 'o', '\0' };
+
+            var values = students[2];
+            students.Sort();
+
+            //var std = new Student_Struct("Mr Quân", 1245);
+            Console.WriteLine("nhap tên");
+            var firstInput = Console.ReadLine();
+
+            Console.WriteLine("nhap id");
+            var id_input = Console.ReadLine();
+
+            var std = new HinhHoc();
+            std._ten_hinh = firstInput;
+            std._loai_hinh = Convert.ToInt32(id_input);
+
+            Console.WriteLine("Struct Name={0}", std._ten_hinh);
+            Console.WriteLine("Struct id={0}", std._loai_hinh);
+
+            int TrangThai = 0;
+
+            var tt = TrangThai_GiaoDich.THANH_CONG;
+            var tt2 = (int)TrangThai_GiaoDich.THANH_CONG;
+
+            Console.WriteLine("tt={0}", tt);
+            Console.WriteLine("tt2={0}", tt2);
+
+            if (TrangThai == (int)TrangThai_GiaoDich.THANH_CONG)
+            {
+
+            }
+            if (TrangThai == (int)TrangThai_GiaoDich.THATBAI)
+            {
+
+            }
+            if (TrangThai == 3)
+            {
+
+            }
+
+
+            switch (TrangThai)
+            {
+                case 1: break;
+                case 2: break;
+                case 3: break;
+            }
+
+            var bai24 = new BaiSo24();
+            bai24.GiaiBai24();
+
+
             Console.ReadKey();
         }
     }
