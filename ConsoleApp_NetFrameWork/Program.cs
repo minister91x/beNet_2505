@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -273,61 +274,130 @@ namespace ConsoleApp_NetFrameWork
 
             // buổi 4 
 
-            List<int> students = new List<int>()
-            {
-                1,2,3,6,7
-            };
-            char[] my_string = { 'H', 'e', 'l', 'l', 'o', '\0' };
+            //List<int> students = new List<int>()
+            //{
+            //    1,2,3,6,7
+            //};
+            //char[] my_string = { 'H', 'e', 'l', 'l', 'o', '\0' };
 
-            var values = students[2];
-            students.Sort();
+            //var values = students[2];
+            //students.Sort();
 
-            //var std = new Student_Struct("Mr Quân", 1245);
-            Console.WriteLine("nhap tên");
-            var firstInput = Console.ReadLine();
+            ////var std = new Student_Struct("Mr Quân", 1245);
+            //Console.WriteLine("nhap tên");
+            //var firstInput = Console.ReadLine();
 
-            Console.WriteLine("nhap id");
-            var id_input = Console.ReadLine();
+            //Console.WriteLine("nhap id");
+            //var id_input = Console.ReadLine();
 
-            var std = new HinhHoc();
-            std._ten_hinh = firstInput;
-            std._loai_hinh = Convert.ToInt32(id_input);
+            //var std = new HinhHoc();
+            //std._ten_hinh = firstInput;
+            //std._loai_hinh = Convert.ToInt32(id_input);
 
-            Console.WriteLine("Struct Name={0}", std._ten_hinh);
-            Console.WriteLine("Struct id={0}", std._loai_hinh);
+            //Console.WriteLine("Struct Name={0}", std._ten_hinh);
+            //Console.WriteLine("Struct id={0}", std._loai_hinh);
 
-            int TrangThai = 0;
+            //int TrangThai = 0;
 
-            var tt = TrangThai_GiaoDich.THANH_CONG;
-            var tt2 = (int)TrangThai_GiaoDich.THANH_CONG;
+            //var tt = TrangThai_GiaoDich.THANH_CONG;
+            //var tt2 = (int)TrangThai_GiaoDich.THANH_CONG;
 
-            Console.WriteLine("tt={0}", tt);
-            Console.WriteLine("tt2={0}", tt2);
+            //Console.WriteLine("tt={0}", tt);
+            //Console.WriteLine("tt2={0}", tt2);
 
-            if (TrangThai == (int)TrangThai_GiaoDich.THANH_CONG)
-            {
+            //if (TrangThai == (int)TrangThai_GiaoDich.THANH_CONG)
+            //{
 
+            //}
+            //if (TrangThai == (int)TrangThai_GiaoDich.THATBAI)
+            //{
+
+            //}
+            //if (TrangThai == 3)
+            //{
+
+            //}
+
+
+            //switch (TrangThai)
+            //{
+            //    case 1: break;
+            //    case 2: break;
+            //    case 3: break;
+            //}
+
+            //var bai24 = new BaiSo24();
+            //bai24.GiaiBai24();
+
+            Console.WriteLine("----------------Buổi 5-----------------");
+
+            var datetime = DateTime.Now; // UTC+ 7
+            var datetimeUtcNow = DateTime.UtcNow; // UTC +0
+
+            Console.WriteLine("datetime={0}", datetime.ToString("dd/MM/yyyy HH:mm:ss"));
+            Console.WriteLine("datetimeUtcNow={0}", datetimeUtcNow.ToString("dd/MM/yyyy HH:mm:ss"));
+
+            var newLocalDate = datetime.AddDays(1);
+            Console.WriteLine("newLocalDate={0}", newLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
+
+            var newSubLocalDate = datetime.AddDays(-1);
+            Console.WriteLine("newSubLocalDate={0}", newSubLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
+
+            var myTimeSpan = new TimeSpan(-1, -1, -10, 0, 0);
+
+            var newDateWithTimeSpan = datetime.Add(myTimeSpan);
+            Console.WriteLine("newDateWithTimeSpan={0}", newDateWithTimeSpan.ToString("dd/MM/yyyy HH:mm:ss"));
+
+            // Thời điểm hiện tại.
+            DateTime aDateTime = DateTime.Now;
+
+            // Thời điểm năm 2000
+            DateTime y2K = new DateTime(1991, 1, 1);
+
+            // Khoảng thời gian từ năm 2000 tới nay.
+            TimeSpan interval = aDateTime.Subtract(y2K);
+            
+            double days = interval.TotalDays;
+            Console.WriteLine("days={0}", interval.TotalDays);
+            Console.WriteLine("Hours={0}", interval.Hours);
+            Console.WriteLine("Seconds={0}", interval.Seconds);
+
+            //string[] formattedStrings = aDateTime.GetDateTimeFormats();
+
+            //foreach (string format in formattedStrings)
+            //{
+            //    Console.WriteLine(format);
+            //}
+
+            string day_str = "06/06/2024";
+
+            //var datefromString = DateTime.ParseExact(day_str, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //Console.WriteLine("datefromString={0}", datefromString.AddDays(1).ToString("dd/MM/yyyy"));
+
+
+            DateTime dateValue;
+            if(!DateTime.TryParseExact(day_str, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue)){
+                Console.WriteLine("Not Datime");
             }
-            if (TrangThai == (int)TrangThai_GiaoDich.THATBAI)
+            else
             {
-
+                Console.WriteLine("is Datime");
             }
-            if (TrangThai == 3)
+            string _str = "Nguyen/trong/Quan";
+            var arrStr = _str.Split('/');
+            foreach (var item in arrStr)
             {
-
-            }
-
-
-            switch (TrangThai)
-            {
-                case 1: break;
-                case 2: break;
-                case 3: break;
+                Console.WriteLine("{0}", item.ToUpper());
             }
 
-            var bai24 = new BaiSo24();
-            bai24.GiaiBai24();
+            var newstr = _str + "abc";
+            Console.WriteLine("newstr={0}", newstr);
 
+            var builder = new StringBuilder();
+            builder.Append(_str);
+            builder.Append("abc");
+
+            Console.WriteLine("builder={0}", builder.ToString());
 
             Console.ReadKey();
         }
