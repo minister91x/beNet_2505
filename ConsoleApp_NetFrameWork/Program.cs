@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -154,7 +155,13 @@ namespace ConsoleApp_NetFrameWork
             //Other code - no exeption
         }
 
-
+        // T là kieu dữ liệu đại diện cho tất cả các kiểu dữ liệu còn lại 
+        public static void ham_cua_toi<T>(ref T a, ref T b)
+        {
+            T temp = a; // 1
+            a = b; // 2
+            b = temp; // 3
+        }
 
         static void Main(string[] args)
         {
@@ -329,24 +336,24 @@ namespace ConsoleApp_NetFrameWork
             //var bai24 = new BaiSo24();
             //bai24.GiaiBai24();
 
-            Console.WriteLine("----------------Buổi 5-----------------");
+            //Console.WriteLine("----------------Buổi 5-----------------");
 
-            var datetime = DateTime.Now; // UTC+ 7
-            var datetimeUtcNow = DateTime.UtcNow; // UTC +0
+            //var datetime = DateTime.Now; // UTC+ 7
+            //var datetimeUtcNow = DateTime.UtcNow; // UTC +0
 
-            Console.WriteLine("datetime={0}", datetime.ToString("dd/MM/yyyy HH:mm:ss"));
-            Console.WriteLine("datetimeUtcNow={0}", datetimeUtcNow.ToString("dd/MM/yyyy HH:mm:ss"));
+            //Console.WriteLine("datetime={0}", datetime.ToString("dd/MM/yyyy HH:mm:ss"));
+            //Console.WriteLine("datetimeUtcNow={0}", datetimeUtcNow.ToString("dd/MM/yyyy HH:mm:ss"));
 
-            var newLocalDate = datetime.AddDays(1);
-            Console.WriteLine("newLocalDate={0}", newLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
+            //var newLocalDate = datetime.AddDays(1);
+            //Console.WriteLine("newLocalDate={0}", newLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
 
-            var newSubLocalDate = datetime.AddDays(-1);
-            Console.WriteLine("newSubLocalDate={0}", newSubLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
+            //var newSubLocalDate = datetime.AddDays(-1);
+            //Console.WriteLine("newSubLocalDate={0}", newSubLocalDate.ToString("dd/MM/yyyy HH:mm:ss"));
 
-            var myTimeSpan = new TimeSpan(-1, -1, -10, 0, 0);
+            //var myTimeSpan = new TimeSpan(-1, -1, -10, 0, 0);
 
-            var newDateWithTimeSpan = datetime.Add(myTimeSpan);
-            Console.WriteLine("newDateWithTimeSpan={0}", newDateWithTimeSpan.ToString("dd/MM/yyyy HH:mm:ss"));
+            //var newDateWithTimeSpan = datetime.Add(myTimeSpan);
+            //Console.WriteLine("newDateWithTimeSpan={0}", newDateWithTimeSpan.ToString("dd/MM/yyyy HH:mm:ss"));
 
             // Thời điểm hiện tại.
             DateTime aDateTime = DateTime.Now;
@@ -356,7 +363,7 @@ namespace ConsoleApp_NetFrameWork
 
             // Khoảng thời gian từ năm 2000 tới nay.
             TimeSpan interval = aDateTime.Subtract(y2K);
-            
+
             double days = interval.TotalDays;
             Console.WriteLine("days={0}", interval.TotalDays);
             Console.WriteLine("Hours={0}", interval.Hours);
@@ -375,29 +382,127 @@ namespace ConsoleApp_NetFrameWork
             //Console.WriteLine("datefromString={0}", datefromString.AddDays(1).ToString("dd/MM/yyyy"));
 
 
-            DateTime dateValue;
-            if(!DateTime.TryParseExact(day_str, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue)){
-                Console.WriteLine("Not Datime");
-            }
-            else
+            //DateTime dateValue;
+            //if(!DateTime.TryParseExact(day_str, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue)){
+            //    Console.WriteLine("Not Datime");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("is Datime");
+            //}
+            //string _str = "Nguyen/trong/Quan";
+            //var arrStr = _str.Split('/');
+            //foreach (var item in arrStr)
+            //{
+            //    Console.WriteLine("{0}", item.ToUpper());
+            //}
+
+            //var newstr = _str + "abc";
+            //Console.WriteLine("newstr={0}", newstr);
+
+            //var builder = new StringBuilder();
+            //builder.Append(_str);
+            //builder.Append("abc");
+
+            //Console.WriteLine("builder={0}", builder.ToString());
+
+            Console.WriteLine("-----------------6-----------------------");
+            Console.OutputEncoding = Encoding.UTF8;
+            //var bai24 = new BaiSo24();
+            //bai24.ReadExcelFile();
+            int a = 10;
+            int b = 20;
+            Console.WriteLine("a={0}", a);
+            Console.WriteLine("b={0}", b);
+
+            ham_cua_toi<int>(ref a, ref b);
+
+            Console.WriteLine("after a={0}", a);
+            Console.WriteLine("after b={0}", b);
+
+            string a_str = "MR";
+            string b_str = "QUAN";
+
+            Console.WriteLine("a_str={0}", a_str);
+            Console.WriteLine("b_str={0}", b_str);
+
+            ham_cua_toi<string>(ref a_str, ref b_str);
+
+
+            Console.WriteLine("after a_str={0}", a_str);
+            Console.WriteLine("after b_str={0}", b_str);
+
+
+            ArrayList arrList = new ArrayList() { 1, "5", 2.5, true };
+            arrList.Add(true);
+            arrList.Add("124");
+            arrList.Add(10.6);
+            foreach (var item in arrList)
             {
-                Console.WriteLine("is Datime");
+                Console.WriteLine("item={0}", item);
+
             }
-            string _str = "Nguyen/trong/Quan";
-            var arrStr = _str.Split('/');
-            foreach (var item in arrStr)
+
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("MyKey", "123");
+            dic.Add("MyKey1", "aaaaa");
+
+            Hashtable hashtable = new Hashtable();
+
+            hashtable.Add("Key1", "Value1");
+            hashtable.Add("Key2", "Value2");
+
+            foreach (DictionaryEntry item in hashtable)
             {
-                Console.WriteLine("{0}", item.ToUpper());
+                Console.WriteLine("Key: {0} - Value: {1}",
+                    item.Key, item.Value);
             }
 
-            var newstr = _str + "abc";
-            Console.WriteLine("newstr={0}", newstr);
+            foreach (var key in hashtable.Keys)
+            {
+                Console.WriteLine("Key: {0} ", key);
+            }
 
-            var builder = new StringBuilder();
-            builder.Append(_str);
-            builder.Append("abc");
+            SortedList mySL = new SortedList();
+            mySL.Add("Third", "!");
+            mySL.Add("abc", "1234");
 
-            Console.WriteLine("builder={0}", builder.ToString());
+            Console.WriteLine("mySL");
+            Console.WriteLine(" Count: {0}", mySL.Count);
+            Console.WriteLine(" Capacity: {0}", mySL.Capacity);
+            Console.WriteLine(" Keys and Values:");
+            Console.WriteLine("\t-KEY-\t-VALUE-");
+
+            for (int i = 0; i < mySL.Count; i++)
+            {
+                Console.WriteLine("\t{0}:\t{1}",
+                    mySL.GetKey(i),
+                    mySL.GetByIndex(i));
+            }
+
+
+            Stack myStack = new Stack();
+            myStack.Push("Hello");
+            myStack.Push("World");
+            myStack.Push("!");
+
+            Console.WriteLine("\t myStack Count: {0}", myStack.Count);
+
+            foreach (Object obj in myStack)
+            {
+                Console.Write(" {0} \n", obj);
+            }
+
+            Console.Write(" -----------Queue---------------- \n");
+            Queue myQ = new Queue();
+            myQ.Enqueue("Hello");
+            myQ.Enqueue("World");
+            myQ.Enqueue("!");
+
+            foreach (Object obj in myQ)
+            {
+                Console.Write(" {0} \n", obj);
+            }
 
             Console.ReadKey();
         }

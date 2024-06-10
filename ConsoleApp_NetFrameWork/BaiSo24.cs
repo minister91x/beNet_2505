@@ -55,5 +55,64 @@ namespace ConsoleApp_NetFrameWork
 
 
         }
+
+        public StringBuilder ReadExcelFile()
+        {
+            var errItem = new StringBuilder();
+            string itemErr = string.Empty;
+            try
+            {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                using (ExcelPackage package = new ExcelPackage(new System.IO.FileInfo(@"C:\Users\Admin\Desktop\NhanVien.xlsx")))
+                {
+                    // Get the first worksheet in the file
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+
+                    for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
+                    {
+                        var maNhanVien = worksheet.Cells[row, 1].Value?.ToString();
+                        var tenNhanVien = worksheet.Cells[row, 2].Value?.ToString();
+                        var heSoNhanVien = worksheet.Cells[row, 3].Value?.ToString();
+
+                        if (string.IsNullOrEmpty(maNhanVien) && string.IsNullOrEmpty(tenNhanVien)
+                            && string.IsNullOrEmpty(heSoNhanVien))
+                        {
+                            continue;
+                        }
+
+                        if (string.IsNullOrEmpty(maNhanVien))
+                        {
+                            errItem.Append("maNhanVien Dòng số " + row + " cột số 1 bị trống");
+                           // itemErr += "maNhanVien Dòng số " + row + " cột số 1 bị trống";
+                            continue;
+                        }
+
+                        if (string.IsNullOrEmpty(tenNhanVien))
+                        {
+                            errItem.Append("tenNhanVien Dòng số " + row + " cột số 2 bị trống");
+                            continue;
+                        }
+
+                        if (string.IsNullOrEmpty(heSoNhanVien))
+                        {
+                            errItem.Append("heSoNhanVien Dòng số " + row + " cột số 3 bị trống");
+                            continue;
+                        }
+                    }
+
+                    if (errItem != null)
+                    {
+                        Console.WriteLine("Lõi ở : {0}", errItem.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return errItem;
+        }
     }
 }
