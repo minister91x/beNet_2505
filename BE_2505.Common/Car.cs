@@ -8,7 +8,7 @@ namespace BE_2505.Common
 {
     public class Car
     {
-        private string _brand { get; set; }
+        public string _brand { get; set; }
         public string _model { get; set; }
         public int _year { get; set; }
 
