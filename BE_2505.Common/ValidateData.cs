@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp_NetFrameWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace BE_2505.Common
             }
 
 
-
-
+            //var myclass = new MyClass_Dilivery();
+            //myclass.Id = 123;
             return true;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE_2505.Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -503,6 +504,46 @@ namespace ConsoleApp_NetFrameWork
             {
                 Console.Write(" {0} \n", obj);
             }
+
+            //=------------------------------Buổi 7----------------------
+
+
+            var myclass = new MyClass_Dilivery();
+            myclass.Id = 1;
+            myclass.Name = "XE 4 CHỖ";
+
+            var myclass2 = new MyClass_Dilivery();
+            myclass.Id = 2;
+            myclass.Name = "XE 5 CHỖ";
+
+
+
+            var staticclass = StaticClass.TestStatic();
+            var staticclass_properties = StaticClass.StaticName;
+
+            var bird = new Bird();
+            bird.Name = "Bird";
+            bird.Eat();
+
+
+            var xekhach = new XeKhach();
+
+
+
+            var xekhach2 = new XeKhach();
+            xekhach2._brand = "toyota";
+            xekhach2._model = "lexus";
+            xekhach2._year = 2024;
+
+            // c3:
+            var xekhach3 = new XeKhach
+            {
+                _brand = "TOYOTA",
+                _model = "LEXUS",
+                _year = 2024
+            };
+
+            Console.Write("infor {0}", xekhach.display_info());
 
             Console.ReadKey();
         }
