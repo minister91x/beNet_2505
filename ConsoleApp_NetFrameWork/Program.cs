@@ -17,6 +17,26 @@ namespace ConsoleApp_NetFrameWork
         //    a = 100;
         //}
 
+        public int Cong(int a, int b)
+        {
+            return a + b;
+        }
+
+        public int Cong(int a)
+        {
+            return a + 10;
+        }
+
+        public int Cong(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+
+        public long Cong(long a, long b)
+        {
+            return a + b;
+        }
         struct Student_Struct
         {
             // Thuộc tính
@@ -39,8 +59,6 @@ namespace ConsoleApp_NetFrameWork
                 return _name + " is running";
             }
         }
-
-
 
         struct HinhHoc
         {
@@ -411,140 +429,164 @@ namespace ConsoleApp_NetFrameWork
             Console.OutputEncoding = Encoding.UTF8;
             //var bai24 = new BaiSo24();
             //bai24.ReadExcelFile();
-            int a = 10;
-            int b = 20;
-            Console.WriteLine("a={0}", a);
-            Console.WriteLine("b={0}", b);
+            //int a = 10;
+            //int b = 20;
+            //Console.WriteLine("a={0}", a);
+            //Console.WriteLine("b={0}", b);
 
-            ham_cua_toi<int>(ref a, ref b);
+            //ham_cua_toi<int>(ref a, ref b);
 
-            Console.WriteLine("after a={0}", a);
-            Console.WriteLine("after b={0}", b);
+            //Console.WriteLine("after a={0}", a);
+            //Console.WriteLine("after b={0}", b);
 
-            string a_str = "MR";
-            string b_str = "QUAN";
+            //string a_str = "MR";
+            //string b_str = "QUAN";
 
-            Console.WriteLine("a_str={0}", a_str);
-            Console.WriteLine("b_str={0}", b_str);
+            //Console.WriteLine("a_str={0}", a_str);
+            //Console.WriteLine("b_str={0}", b_str);
 
-            ham_cua_toi<string>(ref a_str, ref b_str);
-
-
-            Console.WriteLine("after a_str={0}", a_str);
-            Console.WriteLine("after b_str={0}", b_str);
+            //ham_cua_toi<string>(ref a_str, ref b_str);
 
 
-            ArrayList arrList = new ArrayList() { 1, "5", 2.5, true };
-            arrList.Add(true);
-            arrList.Add("124");
-            arrList.Add(10.6);
-            foreach (var item in arrList)
+            //Console.WriteLine("after a_str={0}", a_str);
+            //Console.WriteLine("after b_str={0}", b_str);
+
+
+            //ArrayList arrList = new ArrayList() { 1, "5", 2.5, true };
+            //arrList.Add(true);
+            //arrList.Add("124");
+            //arrList.Add(10.6);
+            //foreach (var item in arrList)
+            //{
+            //    Console.WriteLine("item={0}", item);
+
+            //}
+
+            //Dictionary<string, string> dic = new Dictionary<string, string>();
+            //dic.Add("MyKey", "123");
+            //dic.Add("MyKey1", "aaaaa");
+
+            //Hashtable hashtable = new Hashtable();
+
+            //hashtable.Add("Key1", "Value1");
+            //hashtable.Add("Key2", "Value2");
+
+            //foreach (DictionaryEntry item in hashtable)
+            //{
+            //    Console.WriteLine("Key: {0} - Value: {1}",
+            //        item.Key, item.Value);
+            //}
+
+            //foreach (var key in hashtable.Keys)
+            //{
+            //    Console.WriteLine("Key: {0} ", key);
+            //}
+
+            //SortedList mySL = new SortedList();
+            //mySL.Add("Third", "!");
+            //mySL.Add("abc", "1234");
+
+            //Console.WriteLine("mySL");
+            //Console.WriteLine(" Count: {0}", mySL.Count);
+            //Console.WriteLine(" Capacity: {0}", mySL.Capacity);
+            //Console.WriteLine(" Keys and Values:");
+            //Console.WriteLine("\t-KEY-\t-VALUE-");
+
+            //for (int i = 0; i < mySL.Count; i++)
+            //{
+            //    Console.WriteLine("\t{0}:\t{1}",
+            //        mySL.GetKey(i),
+            //        mySL.GetByIndex(i));
+            //}
+
+
+            //Stack myStack = new Stack();
+            //myStack.Push("Hello");
+            //myStack.Push("World");
+            //myStack.Push("!");
+
+            //Console.WriteLine("\t myStack Count: {0}", myStack.Count);
+
+            //foreach (Object obj in myStack)
+            //{
+            //    Console.Write(" {0} \n", obj);
+            //}
+
+            //Console.Write(" -----------Queue---------------- \n");
+            //Queue myQ = new Queue();
+            //myQ.Enqueue("Hello");
+            //myQ.Enqueue("World");
+            //myQ.Enqueue("!");
+
+            //foreach (Object obj in myQ)
+            //{
+            //    Console.Write(" {0} \n", obj);
+            //}
+
+            ////=------------------------------Buổi 7----------------------
+
+
+            //var myclass = new MyClass_Dilivery();
+            //myclass.Id = 1;
+            //myclass.Name = "XE 4 CHỖ";
+
+            //var myclass2 = new MyClass_Dilivery();
+            //myclass.Id = 2;
+            //myclass.Name = "XE 5 CHỖ";
+
+
+
+            //var staticclass = StaticClass.TestStatic();
+            //var staticclass_properties = StaticClass.StaticName;
+
+            //var bird = new Bird();
+            //bird.Name = "Bird";
+            //bird.Eat();
+
+
+            //var xekhach = new XeKhach();
+
+
+
+            //var xekhach2 = new XeKhach();
+            //xekhach2._brand = "toyota";
+            //xekhach2._model = "lexus";
+            //xekhach2._year = 2024;
+
+            //// c3:
+            //var xekhach3 = new XeKhach
+            //{
+            //    _brand = "TOYOTA",
+            //    _model = "LEXUS",
+            //    _year = 2024
+            //};
+
+            //Console.Write("infor {0}", xekhach.display_info());
+
+            Console.Write("Buoi 8-----------------");
+            // nhấn F10 trên bàn phím để chạy từng dòng 
+            // Nhần F11 TRÊN bàn phím để nhày vào hàm 
+            var student = new BE_2505.DataAccess.DALImpl.StudentManager();
+
+            var student_Req = new BE_2505.DataAccess.DTO.Student
             {
-                Console.WriteLine("item={0}", item);
-
-            }
-
-            Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("MyKey", "123");
-            dic.Add("MyKey1", "aaaaa");
-
-            Hashtable hashtable = new Hashtable();
-
-            hashtable.Add("Key1", "Value1");
-            hashtable.Add("Key2", "Value2");
-
-            foreach (DictionaryEntry item in hashtable)
-            {
-                Console.WriteLine("Key: {0} - Value: {1}",
-                    item.Key, item.Value);
-            }
-
-            foreach (var key in hashtable.Keys)
-            {
-                Console.WriteLine("Key: {0} ", key);
-            }
-
-            SortedList mySL = new SortedList();
-            mySL.Add("Third", "!");
-            mySL.Add("abc", "1234");
-
-            Console.WriteLine("mySL");
-            Console.WriteLine(" Count: {0}", mySL.Count);
-            Console.WriteLine(" Capacity: {0}", mySL.Capacity);
-            Console.WriteLine(" Keys and Values:");
-            Console.WriteLine("\t-KEY-\t-VALUE-");
-
-            for (int i = 0; i < mySL.Count; i++)
-            {
-                Console.WriteLine("\t{0}:\t{1}",
-                    mySL.GetKey(i),
-                    mySL.GetByIndex(i));
-            }
-
-
-            Stack myStack = new Stack();
-            myStack.Push("Hello");
-            myStack.Push("World");
-            myStack.Push("!");
-
-            Console.WriteLine("\t myStack Count: {0}", myStack.Count);
-
-            foreach (Object obj in myStack)
-            {
-                Console.Write(" {0} \n", obj);
-            }
-
-            Console.Write(" -----------Queue---------------- \n");
-            Queue myQ = new Queue();
-            myQ.Enqueue("Hello");
-            myQ.Enqueue("World");
-            myQ.Enqueue("!");
-
-            foreach (Object obj in myQ)
-            {
-                Console.Write(" {0} \n", obj);
-            }
-
-            //=------------------------------Buổi 7----------------------
-
-
-            var myclass = new MyClass_Dilivery();
-            myclass.Id = 1;
-            myclass.Name = "XE 4 CHỖ";
-
-            var myclass2 = new MyClass_Dilivery();
-            myclass.Id = 2;
-            myclass.Name = "XE 5 CHỖ";
-
-
-
-            var staticclass = StaticClass.TestStatic();
-            var staticclass_properties = StaticClass.StaticName;
-
-            var bird = new Bird();
-            bird.Name = "Bird";
-            bird.Eat();
-
-
-            var xekhach = new XeKhach();
-
-
-
-            var xekhach2 = new XeKhach();
-            xekhach2._brand = "toyota";
-            xekhach2._model = "lexus";
-            xekhach2._year = 2024;
-
-            // c3:
-            var xekhach3 = new XeKhach
-            {
-                _brand = "TOYOTA",
-                _model = "LEXUS",
-                _year = 2024
+                Id = Guid.NewGuid(),
+                Name = "MR QUÂN",
+                DateOfBirth = DateTime.Now
             };
 
-            Console.Write("infor {0}", xekhach.display_info());
+            var result = student.Student_Insert(student_Req);
 
+            if (result.ResponseCode < 0)
+            {
+                Console.Write("Thông báo lỗi {0}", result.ResponseMessenger);
+            }
+            else
+            {
+                Console.Write("Thông báo: {0}", result.ResponseMessenger);
+            }
+
+            
             Console.ReadKey();
         }
     }

@@ -136,6 +136,10 @@
       <Project>{f8ea1052-d6ef-4357-9c0a-12379dccf1e1}</Project>
       <Name>BE_2505.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BE_2505.DataAccess\BE_2505.DataAccess.csproj">
+      <Project>{aee67b96-ef2a-413b-8d38-df099bfdd4d4}</Project>
+      <Name>BE_2505.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

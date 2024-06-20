@@ -54,3 +54,5 @@ C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\bin\Debug\System.Tex
 C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\bin\Debug\System.ValueTuple.xml
 C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\obj\Debug\ConsoleApp_NetFrameWork.csproj.CopyComplete
+C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\bin\Debug\BE_2505.DataAccess.dll
+C:\Users\Admin\source\repos\BE_2505\ConsoleApp_NetFrameWork\bin\Debug\BE_2505.DataAccess.pdb
