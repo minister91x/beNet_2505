@@ -1,4 +1,5 @@
 ﻿using BE_2505.Common;
+using BE_2505.DataAccess.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -574,6 +575,10 @@ namespace ConsoleApp_NetFrameWork
                 Name = "MR QUÂN",
                 DateOfBirth = DateTime.Now
             };
+            //var student_Req = new BE_2505.DataAccess.DTO.Student();
+            //student_Req.SetFullName("MR QUÂN");
+
+           // Console.Write("FullName= {0}", student_Req.GetFullName());
 
             var result = student.Student_Insert(student_Req);
 
@@ -584,9 +589,25 @@ namespace ConsoleApp_NetFrameWork
             else
             {
                 Console.Write("Thông báo: {0}", result.ResponseMessenger);
+                Console.Write("id student: {0}", result.studentId);
             }
 
-            
+            var maydell = new MayTinhDELL();
+
+            maydell.ChieuDai = 100;
+            maydell.ChieuRong = 200;
+
+            Console.Write("ChieuDai maydell: {0}", maydell.ChieuDai +"\n");
+            Console.Write("ChieuRong maydell: {0}", maydell.ChieuRong + "\n");
+
+
+            var maylenovo = new MayTinhLENOVO();
+
+            maylenovo.ChieuDai = 120;
+            maylenovo.ChieuRong = 250;
+
+            Console.Write("ChieuDai maylenovo: {0}", maylenovo.ChieuDai + "\n");
+            Console.Write("ChieuRong maylenovo: {0}", maylenovo.ChieuRong + "\n");
             Console.ReadKey();
         }
     }

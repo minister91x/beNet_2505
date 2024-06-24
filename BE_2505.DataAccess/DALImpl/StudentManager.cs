@@ -11,9 +11,9 @@ namespace BE_2505.DataAccess.DALImpl
     public class StudentManager : IStudentDAL
     {
         List<Student> students = new List<Student>();
-        public ReturnData Student_Insert(Student requestData)
+        public StudentInsert_ResponseData Student_Insert(Student requestData)
         {
-            var returnData = new ReturnData();
+            var returnData = new StudentInsert_ResponseData();
             try
             {
                 // Bước 1: Kiểm tra đầu vào 
@@ -81,6 +81,7 @@ namespace BE_2505.DataAccess.DALImpl
 
             returnData.ResponseCode = 1;
             returnData.ResponseMessenger = "Thêm thành công !" + requestData.Name;
+            returnData.studentId = Guid.NewGuid();
             return returnData;
         }
     }

@@ -44,6 +44,11 @@
     <Compile Include="DALImpl\StudentManager.cs" />
     <Compile Include="DAL\IStudentDAL.cs" />
     <Compile Include="DTO\Employeer.cs" />
+    <Compile Include="DTO\Ipad.cs" />
+    <Compile Include="DTO\MayIPad.cs" />
+    <Compile Include="DTO\MayTinhDELL.cs" />
+    <Compile Include="DTO\MayTinhLENOVO.cs" />
+    <Compile Include="DTO\MayViTinh.cs" />
     <Compile Include="DTO\Person.cs" />
     <Compile Include="DTO\ReturnData.cs" />
     <Compile Include="DTO\Student.cs" />

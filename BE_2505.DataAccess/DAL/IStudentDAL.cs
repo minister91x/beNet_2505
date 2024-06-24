@@ -9,6 +9,6 @@ namespace BE_2505.DataAccess.DAL
 {
     public interface IStudentDAL
     {
-        ReturnData Student_Insert(Student requestData);
+        StudentInsert_ResponseData Student_Insert(Student requestData);
     }
 }

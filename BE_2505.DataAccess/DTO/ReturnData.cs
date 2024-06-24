@@ -11,4 +11,10 @@ namespace BE_2505.DataAccess.DTO
         public int ResponseCode { get; set; }
         public string ResponseMessenger { get; set; }
     }
+
+    public class StudentInsert_ResponseData: ReturnData
+    {
+        public Guid studentId { get; set; }
+    }
+
 }
