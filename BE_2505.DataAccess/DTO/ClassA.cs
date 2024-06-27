@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE_2505.DataAccess.DTO
 {
-    public abstract class Employeer 
+    public class ClassA
     {
-        public abstract string working();
-
+        public int TinhTong()
+        {
+            return 10;
+        }
     }
 }

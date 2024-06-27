@@ -580,34 +580,39 @@ namespace ConsoleApp_NetFrameWork
 
            // Console.Write("FullName= {0}", student_Req.GetFullName());
 
-            var result = student.Student_Insert(student_Req);
+            //var result = student.Student_Insert(student_Req);
 
-            if (result.ResponseCode < 0)
-            {
-                Console.Write("Thông báo lỗi {0}", result.ResponseMessenger);
-            }
-            else
-            {
-                Console.Write("Thông báo: {0}", result.ResponseMessenger);
-                Console.Write("id student: {0}", result.studentId);
-            }
+            //if (result.ResponseCode < 0)
+            //{
+            //    Console.Write("Thông báo lỗi {0}", result.ResponseMessenger);
+            //}
+            //else
+            //{
+            //    Console.Write("Thông báo: {0}", result.ResponseMessenger);
+            //    Console.Write("id student: {0}", result.studentId);
+            //}
 
-            var maydell = new MayTinhDELL();
+            //var maydell = new MayTinhDELL();
 
-            maydell.ChieuDai = 100;
-            maydell.ChieuRong = 200;
+            //maydell.ChieuDai = 100;
+            //maydell.ChieuRong = 200;
 
-            Console.Write("ChieuDai maydell: {0}", maydell.ChieuDai +"\n");
-            Console.Write("ChieuRong maydell: {0}", maydell.ChieuRong + "\n");
+            //Console.Write("ChieuDai maydell: {0}", maydell.ChieuDai +"\n");
+            //Console.Write("ChieuRong maydell: {0}", maydell.ChieuRong + "\n");
 
 
-            var maylenovo = new MayTinhLENOVO();
+            //var maylenovo = new MayTinhLENOVO();
 
-            maylenovo.ChieuDai = 120;
-            maylenovo.ChieuRong = 250;
+            //maylenovo.ChieuDai = 120;
+            //maylenovo.ChieuRong = 250;
 
-            Console.Write("ChieuDai maylenovo: {0}", maylenovo.ChieuDai + "\n");
-            Console.Write("ChieuRong maylenovo: {0}", maylenovo.ChieuRong + "\n");
+            //Console.Write("ChieuDai maylenovo: {0}", maylenovo.ChieuDai + "\n");
+            //Console.Write("ChieuRong maylenovo: {0}", maylenovo.ChieuRong + "\n");
+
+
+        //    var classb = new ClassB();
+            
+           // Console.Write("ClassB Tong: {0}", classb.Tong() + "\n");
             Console.ReadKey();
         }
     }

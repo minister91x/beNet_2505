@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE_2505.DataAccess.DTO
+namespace BE_2505.DataAccess.DAL
 {
-    public abstract class Employeer 
+    public interface IAttendanceDAL
     {
-        public abstract string working();
-
+        void checkAttendance();
     }
 }
