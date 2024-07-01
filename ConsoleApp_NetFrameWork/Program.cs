@@ -578,7 +578,7 @@ namespace ConsoleApp_NetFrameWork
             //var student_Req = new BE_2505.DataAccess.DTO.Student();
             //student_Req.SetFullName("MR QUÂN");
 
-           // Console.Write("FullName= {0}", student_Req.GetFullName());
+            // Console.Write("FullName= {0}", student_Req.GetFullName());
 
             //var result = student.Student_Insert(student_Req);
 
@@ -610,9 +610,11 @@ namespace ConsoleApp_NetFrameWork
             //Console.Write("ChieuRong maylenovo: {0}", maylenovo.ChieuRong + "\n");
 
 
-        //    var classb = new ClassB();
-            
-           // Console.Write("ClassB Tong: {0}", classb.Tong() + "\n");
+            //    var classb = new ClassB();
+
+            // Console.Write("ClassB Tong: {0}", classb.Tong() + "\n");
+
+            throw new ArgumentException("Tuổi phải nằm trong khoảng từ 22 đến 60.");
             Console.ReadKey();
         }
     }

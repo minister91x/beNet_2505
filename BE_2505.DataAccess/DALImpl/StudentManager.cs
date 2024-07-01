@@ -11,6 +11,54 @@ namespace BE_2505.DataAccess.DALImpl
     public class StudentManager : IStudentDAL
     {
         List<Student> students = new List<Student>();
+
+        public List<Student> Baocao()
+        {
+            var lstBaocao = new List<Student>();
+            try
+            {
+                students = students.OrderBy(s => s.Name).ToList();
+                // Bước 1: 
+                for (int i = 0; i < students.Count; i++)
+                {
+                    var dong_tong_Dautien = new Student { };
+                    lstBaocao.Add(dong_tong_Dautien);
+
+                }
+
+
+                // Bước 2
+                for (int i = 0; i < students.Count; i++)
+                {
+                    var item = students[i];
+                    var isExist = lstBaocao.Where(s => s.Name == item.Name).FirstOrDefault() == null ? true : false;
+                    if (!isExist)
+                    {
+                        // tạo ra cái object tổng của tuwngfnguowif 
+
+                        var item_baocao = lstBaocao[i - 1]; // ví trí trức đó
+                        // tính tổng theo người 
+                        var tong_theo_nguoi = lstBaocao.Where(s => s.Name == item_baocao.Name)
+                            .Sum(s => s.SolUONG);
+
+
+                        var dong_tong_theo_nguoi = new Student { SolUONG = tong_theo_nguoi };
+
+                        lstBaocao.Add(dong_tong_theo_nguoi);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return lstBaocao;
+        }
+
         public StudentInsert_ResponseData Student_Insert(Student requestData)
         {
             var returnData = new StudentInsert_ResponseData();

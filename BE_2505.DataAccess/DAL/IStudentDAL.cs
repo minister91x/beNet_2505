@@ -10,5 +10,7 @@ namespace BE_2505.DataAccess.DAL
     public interface IStudentDAL
     {
         StudentInsert_ResponseData Student_Insert(Student requestData);
+
+        List<Student> Baocao();
     }
 }
