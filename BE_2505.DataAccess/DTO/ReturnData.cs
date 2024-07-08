@@ -16,5 +16,8 @@ namespace BE_2505.DataAccess.DTO
     {
         public Guid studentId { get; set; }
     }
-
+    public class StudentDelete_ResponseData : ReturnData
+    {
+      
+    }
 }

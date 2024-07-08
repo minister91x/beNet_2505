@@ -569,12 +569,12 @@ namespace ConsoleApp_NetFrameWork
             // Nhần F11 TRÊN bàn phím để nhày vào hàm 
             var student = new BE_2505.DataAccess.DALImpl.StudentManager();
 
-            var student_Req = new BE_2505.DataAccess.DTO.Student
-            {
-                Id = Guid.NewGuid(),
-                Name = "MR QUÂN",
-                DateOfBirth = DateTime.Now
-            };
+            //var student_Req = new BE_2505.DataAccess.DTO.Student
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "MR QUÂN",
+            //    DateOfBirth = DateTime.Now
+            //};
             //var student_Req = new BE_2505.DataAccess.DTO.Student();
             //student_Req.SetFullName("MR QUÂN");
 
@@ -613,8 +613,17 @@ namespace ConsoleApp_NetFrameWork
             //    var classb = new ClassB();
 
             // Console.Write("ClassB Tong: {0}", classb.Tong() + "\n");
-
-            throw new ArgumentException("Tuổi phải nằm trong khoảng từ 22 đến 60.");
+            var list = student.GetStudents();
+            if (list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                    Console.Write(item.ID + "\n");
+                    Console.Write(item.Name + "\n");
+                    Console.Write(item.Address + "\n");
+                }
+            }
+            //throw new ArgumentException("Tuổi phải nằm trong khoảng từ 22 đến 60.");
             Console.ReadKey();
         }
     }
