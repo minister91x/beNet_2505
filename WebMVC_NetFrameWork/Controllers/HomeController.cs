@@ -11,15 +11,8 @@ namespace WebMVC_NetFrameWork.Controllers
     {
         public ActionResult Index()
         {
-            var lst = new List<StudentModels>();
-            for (int i = 0; i < 5; i++)
-            {
-                lst.Add(new StudentModels
-                {
-                    Id = i + 1,
-                    Name = "Student " + i
-                });
-            }
+            var lst = new List<BE_2505.DataAccess.DTO.Student>();
+            lst = new BE_2505.DataAccess.DALImpl.StudentManager().GetStudents();
             // trả về view 
             return View(lst);
         }

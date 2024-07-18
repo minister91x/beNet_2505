@@ -2,10 +2,11 @@
     ViewBag.Title = "Home Page";
 }
 @*nhận model về từ controller*@ 
-@model List<WebMVC_NetFrameWork.Models.StudentModels>
+@model List<BE_2505.DataAccess.DTO.Student>
 
 <div class="jumbotron">
     <h1>LỚP ASP.NET BACKEND 2505 NGÀY @DateTime.Now.ToString("dd/MM/yyyy")</h1>
+    @Html.ActionLink("bấm vào đây","abc","test")
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,8 +20,8 @@
                 foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.Id</td>
                         <td>@item.Name</td>
+                        <td>@item.Address</td>
                     </tr>
                 }
             }
