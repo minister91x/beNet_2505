@@ -1,12 +1,12 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@*nhận model về từ controller*@ 
+@*nhận model về từ controller*@
 @model List<BE_2505.DataAccess.DTO.Student>
 
 <div class="jumbotron">
     <h1>LỚP ASP.NET BACKEND 2505 NGÀY @DateTime.Now.ToString("dd/MM/yyyy")</h1>
-    @Html.ActionLink("bấm vào đây","abc","test")
+    @Html.ActionLink("bấm vào đây", "abc", "test")
     <table class="table table-striped">
         <thead>
             <tr>
@@ -26,7 +26,37 @@
                 }
             }
 
-            
+
         </tbody>
     </table>
 </div>
+@Html.Action("DemoPartialView", "Home", new { id = 10 });
+@*@Html.Partial("~/Views/Home/DemoPartialView.cshtml");*@
+
+<div id="PartialViewData"></div>
+
+<script>
+    $(document).ready(function () {
+       // loadPartialView();
+    });
+
+    function loadPartialView() {
+        $.ajax({
+            url: '/Home/DemoPartialView', // URL đến API Controller
+            type: 'POST',
+           /* contentType: 'application/json',*/
+            data: {},
+            contentType: 'html',
+            success: function (response) {
+               // load partialview vào thẻ div
+                $("#PartialViewData").html("");
+                $("#PartialViewData").html(response);
+            },
+            error: function (xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+                // Xử lý lỗi (nếu có)
+            }
+        });
+    }
+</script>
+

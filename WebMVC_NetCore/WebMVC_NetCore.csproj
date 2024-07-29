@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BE_2505.DataAccess.Netcore\BE_2505.DataAccess.Netcore.csproj" />
+  </ItemGroup>
+
 </Project>

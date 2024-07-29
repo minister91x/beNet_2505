@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BE_2505.Common.Netcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BE_2505.Common.Netcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BE_2505.Common.Netcore.dll": {}
+        }
+      },
+      "BE_2505.DataAccess.Netcore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BE_2505.Common.Netcore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BE_2505.DataAccess.Netcore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BE_2505.DataAccess.Netcore.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BE_2505.Common.Netcore/1.0.0": {
+      "type": "project",
+      "path": "../BE_2505.Common.Netcore/BE_2505.Common.Netcore.csproj",
+      "msbuildProject": "../BE_2505.Common.Netcore/BE_2505.Common.Netcore.csproj"
+    },
+    "BE_2505.DataAccess.Netcore/1.0.0": {
+      "type": "project",
+      "path": "../BE_2505.DataAccess.Netcore/BE_2505.DataAccess.Netcore.csproj",
+      "msbuildProject": "../BE_2505.DataAccess.Netcore/BE_2505.DataAccess.Netcore.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BE_2505.DataAccess.Netcore >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Admin\\.nuget\\packages\\": {}
@@ -33,7 +70,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

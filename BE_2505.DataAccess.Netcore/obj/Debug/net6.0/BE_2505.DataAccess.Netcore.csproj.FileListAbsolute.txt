@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.AssemblyInfo.cs
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.deps.json
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.Common.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.Common.Netcore.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.csproj.CopyComplete
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\refint\BE_2505.DataAccess.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\ref\BE_2505.DataAccess.Netcore.dll

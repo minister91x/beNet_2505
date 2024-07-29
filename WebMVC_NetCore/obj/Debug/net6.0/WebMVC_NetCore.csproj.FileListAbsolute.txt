@@ -24,3 +24,9 @@ C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\refint\WebMV
 C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\WebMVC_NetCore.pdb
 C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\WebMVC_NetCore.genruntimeconfig.cache
 C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\ref\WebMVC_NetCore.dll
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutLogin.cshtml.rz.scp.css
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\bin\Debug\net6.0\BE_2505.Common.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.pdb
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\bin\Debug\net6.0\BE_2505.Common.Netcore.pdb
+C:\Users\Admin\source\repos\BE_2505\WebMVC_NetCore\obj\Debug\net6.0\WebMVC_NetCore.csproj.CopyComplete
