@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9o5lIzLf/C8fRIwm9df6XAeNAqkmh3L5GdCR5tDcVqM=",
+  "Hash": "Hwy3h6gsk72b9/YTpvVn2v5eshV+rX4Q451VAjtFn8E=",
   "Source": "WebMVC_NetCore",
   "BasePath": "_content/WebMVC_NetCore",
   "Mode": "Default",
@@ -1273,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\BE_2505\\WebMVC_NetCore\\wwwroot\\js\\MyScript.js",
+      "SourceId": "WebMVC_NetCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\BE_2505\\WebMVC_NetCore\\wwwroot\\",
+      "BasePath": "_content/WebMVC_NetCore",
+      "RelativePath": "js/MyScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\MyScript.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\BE_2505\\WebMVC_NetCore\\wwwroot\\js\\site.js",

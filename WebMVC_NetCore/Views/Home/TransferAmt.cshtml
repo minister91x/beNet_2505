@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    Transfer
+    <form action="Home/TransferAmt" method="post">
+        Amount <input type="text" name="amount" value="" /><br />
+        Account No. <input type="text" name="account" value="" /><br />
+      @*  @Html.AntiForgeryToken()*@
+        <input type="submit" value="Add Money" />
+    </form>
+</div>

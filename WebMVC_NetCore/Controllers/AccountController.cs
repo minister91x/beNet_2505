@@ -12,17 +12,38 @@ namespace WebMVC_NetCore.Controllers
 
         public ActionResult Login()
         {
+            if (ModelState.IsValid)
+            {
+            }
+                return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(AccountLoginRequestData requestData)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
             return View();
         }
 
-        public async Task<JsonResult> Account_Login(AccountLoginRequestData requestData)
+        public async Task<ActionResult> Account_Login(AccountLoginRequestData requestData)
         {
             var returnData = new AccountLoginResponseData();
             try
             {
-                var rs = await new BE_2505.DataAccess.Netcore.DALImpl.AccountDAOImpl().Login(requestData);
 
-                returnData.ResponseMessenger = rs.ResponseMessenger;
+                if (ModelState.IsValid)
+                {
+                    returnData.ResponseCode = -1;
+                    returnData.ResponseMessenger = "Dữ liệu không hợp lệ";
+                    var rs = await new BE_2505.DataAccess.Netcore.DALImpl.AccountDAOImpl().Login(requestData);
+
+                    returnData.ResponseMessenger = rs.ResponseMessenger;
+                }
+
+               
             }
             catch (Exception ex)
             {
@@ -30,7 +51,7 @@ namespace WebMVC_NetCore.Controllers
                 throw;
             }
 
-            return Json(returnData);
+            return View();
         }
     }
 }

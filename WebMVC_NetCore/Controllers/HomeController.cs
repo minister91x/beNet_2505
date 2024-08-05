@@ -28,5 +28,13 @@ namespace WebMVC_NetCore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        //[ValidateAntiForgeryToken()]
+        public ActionResult TransferAmt()
+        {
+            // Money transfer logic goes here
+            return Content(" has been transferred to account ");
+        }
     }
 }
