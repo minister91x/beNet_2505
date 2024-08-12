@@ -14,6 +14,6 @@ namespace BE_2505.DataAccess.Netcore.DAL
         //StudentInsert_ResponseData StudentInsert_EF(Student student);
         //StudentDelete_ResponseData Student_Remove_EF(int studentId);
 
-        //List<Student> Baocao();
+        Task<List<Student>> Baocao();
     }
 }

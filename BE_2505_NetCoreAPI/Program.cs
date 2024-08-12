@@ -1,3 +1,5 @@
+using BE_2505.DataAccess.Netcore.DAL;
+using BE_2505.DataAccess.Netcore.DALImpl;
 using BE_2505_NetCoreAPI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IAccountDAO, AccountDAOImpl>();
+builder.Services.AddScoped<IStudentDAL, StudentManager>();
+
 
 var app = builder.Build();
 

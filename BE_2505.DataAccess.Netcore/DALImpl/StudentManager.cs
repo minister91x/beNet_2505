@@ -117,7 +117,7 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
 
         //}
 
-        public List<Student> Baocao()
+        public async Task<List<Student>> Baocao()
         {
             var lstBaocao = new List<Student>();
             try

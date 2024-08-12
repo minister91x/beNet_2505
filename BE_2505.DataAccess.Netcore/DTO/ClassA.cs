@@ -8,6 +8,7 @@ namespace BE_2505.DataAccess.Netcore.DTO
 {
     public class ClassA
     {
+       
         public int TinhTong()
         {
             return 10;
