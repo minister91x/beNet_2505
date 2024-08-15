@@ -97,6 +97,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.33, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -140,6 +162,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.Common.Netcore\\BE_2505.Common.Netcore.csproj": {
+                "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.Common.Netcore\\BE_2505.Common.Netcore.csproj"
+              },
               "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj": {
                 "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj"
               }
@@ -156,6 +181,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

@@ -13,3 +13,5 @@ C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\
 C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\refint\BE_2505.DataAccess.Netcore.dll
 C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.pdb
 C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\ref\BE_2505.DataAccess.Netcore.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\bin\Debug\net6.0\BE_2505.DataAccess.Netcore.runtimeconfig.json
+C:\Users\Admin\source\repos\BE_2505\BE_2505.DataAccess.Netcore\obj\Debug\net6.0\BE_2505.DataAccess.Netcore.genruntimeconfig.cache
