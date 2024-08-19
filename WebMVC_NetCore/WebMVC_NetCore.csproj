@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BE_2505.Common.Netcore\BE_2505.Common.Netcore.csproj" />
     <ProjectReference Include="..\BE_2505.DataAccess.Netcore\BE_2505.DataAccess.Netcore.csproj" />
   </ItemGroup>
 

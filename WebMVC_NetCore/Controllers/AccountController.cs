@@ -1,4 +1,4 @@
-﻿using BE_2505.DataAccess.Netcore.DTO;
+﻿
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebMVC_NetCore.Controllers
@@ -18,40 +18,40 @@ namespace WebMVC_NetCore.Controllers
                 return View();
         }
 
-        [HttpPost]
-        public IActionResult Login(AccountLoginRequestData requestData)
-        {
-            if (ModelState.IsValid)
-            {
+       // [HttpPost]
+        //public IActionResult Login(AccountLoginRequestData requestData)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
                 
-            }
-            return View();
-        }
+        //    }
+        //    return View();
+        //}
 
-        public async Task<ActionResult> Account_Login(AccountLoginRequestData requestData)
-        {
-            var returnData = new AccountLoginResponseData();
-            try
-            {
+        //public async Task<ActionResult> Account_Login(AccountLoginRequestData requestData)
+        //{
+        //    var returnData = new AccountLoginResponseData();
+        //    try
+        //    {
 
-                if (ModelState.IsValid)
-                {
-                    returnData.ResponseCode = -1;
-                    returnData.ResponseMessenger = "Dữ liệu không hợp lệ";
-                    var rs = await new BE_2505.DataAccess.Netcore.DALImpl.AccountDAOImpl().Login(requestData);
+        //        if (ModelState.IsValid)
+        //        {
+        //            returnData.ResponseCode = -1;
+        //            returnData.ResponseMessenger = "Dữ liệu không hợp lệ";
+        //            //var rs = await new BE_2505.DataAccess.Netcore.DALImpl.AccountDAOImpl().Login(requestData);
 
-                    returnData.ResponseMessenger = rs.ResponseMessenger;
-                }
+        //            //returnData.ResponseMessenger = rs.ResponseMessenger;
+        //        }
 
                
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw;
-            }
+        //        throw;
+        //    }
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 }

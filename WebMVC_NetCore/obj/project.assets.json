@@ -9946,6 +9946,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BE_2505.Common.Netcore >= 1.0.0",
       "BE_2505.DataAccess.Netcore >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.17"
     ]
@@ -9977,6 +9978,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.Common.Netcore\\BE_2505.Common.Netcore.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.Common.Netcore\\BE_2505.Common.Netcore.csproj"
+            },
             "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj": {
               "projectPath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj"
             }

@@ -29,7 +29,7 @@ namespace BE_2505_NetCoreAPI.Controllers
         {
             try
             {
-                var list = await _iunitOfWork._productRepository.GetProducts(requestData);
+                var list = await _iunitOfWork._productGenericRepository.GetAll();
                 return Ok(list);
             }
             catch (Exception ex)
