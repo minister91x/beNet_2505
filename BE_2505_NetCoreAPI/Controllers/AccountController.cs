@@ -50,7 +50,7 @@ namespace BE_2505_NetCoreAPI.Controllers
                 }
 
                 var account = rs.account;
-                account.Password = string.Empty;
+
 
                 // Bước 2: tạo token và trả về client
 
@@ -80,7 +80,7 @@ namespace BE_2505_NetCoreAPI.Controllers
                 returnData.ResponseMessenger = "Đăng nhập thành công";
                 returnData.token = new JwtSecurityTokenHandler().WriteToken(newToken);
                 returnData.refeshtoken = refeshtoken;
-                returnData.account = account;
+                returnData.account = new Account { UserName = account.UserName, ID = account.ID, FullName = account.FullName };
                 return Ok(returnData);
 
             }

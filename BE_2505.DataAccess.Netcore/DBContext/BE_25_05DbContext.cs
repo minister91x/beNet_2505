@@ -20,5 +20,7 @@ namespace BE_2505.DataAccess.Netcore.DBContext
 
         public DbSet<Product>? product { get; set; }
         public DbSet<Account> account { get; set; }
+        public DbSet<Function> function { get; set; }
+        public DbSet<Permission> permission { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
                 {
                     return -1;
                 }
+
                 user.RefeshToken = requestData.RefeshToken;
                 user.RefeshTokenExpriredTime = requestData.RefeshTokenExpriredTime;
                 _context.account.Update(user);
@@ -42,6 +43,11 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
             }
 
             return 1;
+        }
+
+        public async Task<Function> Function_GetByCode(string functionCode)
+        {
+            return _context.function.Where(s => s.FunctionCode == functionCode ).FirstOrDefault();
         }
 
         public async Task<AccountLoginResponseData> Login(AccountLoginRequestData requestData)
@@ -74,6 +80,11 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
             }
 
             return retunData;
+        }
+
+        public async Task<Permission> Permisson_GetByUserID(int UserID, int functionID)
+        {
+            return _context.permission.Where(s => s.FuntionID == functionID && s.UserID == UserID).FirstOrDefault();
         }
     }
 }

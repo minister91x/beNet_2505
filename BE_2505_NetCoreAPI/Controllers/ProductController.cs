@@ -1,6 +1,7 @@
 ﻿using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DTO;
 using BE_2505.DataAccess.Netcore.UnitOfWork;
+using BE_2505_NetCoreAPI.Filter;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ namespace BE_2505_NetCoreAPI.Controllers
         }
 
         [HttpPost("GetProduct")]
+        [BE_2505_Authorize("PRODUCT_GETLIST", "VIEW")]
         public async Task<ActionResult> GetProduct(ProductGetListRequestData requestData)
         {
             try

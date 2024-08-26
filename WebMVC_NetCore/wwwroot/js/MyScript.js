@@ -26,16 +26,25 @@ function Login() {
         // dataType: "html",
         dataType: "json",
         success: function (rs) {
-            if (rs.returnCode > 0) {
+            alert(rs.token);
+            if (rs.responseCode > 0) {
                 // set cookies
                 debugger;
-
+                console.log(rs.token);
+                setCookie("COOKIE_JWT_TOKEN", rs.token, 1);
                 window.location.href = "/";
             }
-            alert(rs.returnMsg);
+           
         },
         error(rs) {
             console.log(JSON.stringify(rs));
         }
     });
+}
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
