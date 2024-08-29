@@ -67,5 +67,7 @@ namespace BE_2505.Common.Netcore
                 return builder.ToString();
             }
         }
+
+        
     }
 }

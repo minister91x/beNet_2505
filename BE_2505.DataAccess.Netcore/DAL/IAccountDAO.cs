@@ -14,5 +14,9 @@ namespace BE_2505.DataAccess.Netcore.DAL
 
         Task<Function> Function_GetByCode(string functionCode);
         Task<Permission> Permisson_GetByUserID(int UserID, int functionID);
+
+        Task<int> UserSessionInsert(User_Session user_Session);
+
+        Task<int> UserSession_Logout(AccountLogOutRequestData requestData, int UserId);
     }
 }

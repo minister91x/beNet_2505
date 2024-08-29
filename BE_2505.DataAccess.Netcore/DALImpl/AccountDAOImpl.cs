@@ -39,7 +39,7 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
             {
 
                 return -969;
-                     
+
             }
 
             return 1;
@@ -47,7 +47,7 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
 
         public async Task<Function> Function_GetByCode(string functionCode)
         {
-            return _context.function.Where(s => s.FunctionCode == functionCode ).FirstOrDefault();
+            return _context.function.Where(s => s.FunctionCode == functionCode).FirstOrDefault();
         }
 
         public async Task<AccountLoginResponseData> Login(AccountLoginRequestData requestData)
@@ -85,6 +85,39 @@ namespace BE_2505.DataAccess.Netcore.DALImpl
         public async Task<Permission> Permisson_GetByUserID(int UserID, int functionID)
         {
             return _context.permission.Where(s => s.FuntionID == functionID && s.UserID == UserID).FirstOrDefault();
+        }
+
+        public async Task<int> UserSessionInsert(User_Session user_Session)
+        {
+            _context.user_session.Add(user_Session);
+            return _context.SaveChanges();
+        }
+
+        public async Task<int> UserSession_Logout(AccountLogOutRequestData requestData, int UserId)
+        {
+            try
+            {
+
+            
+            var user_Session = _context.user_session
+                .Where(s => s.UserID == UserId && s.Token == requestData.token && s.IP == requestData.IP).FirstOrDefault(); ;
+
+            if (user_Session == null || user_Session.SessionID <= 0)
+            {
+                return -1;
+            }
+
+            user_Session.Token = "";
+            _context.user_session.Update(user_Session);
+            return _context.SaveChanges() ;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return 1;
         }
     }
 }

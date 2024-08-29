@@ -4,6 +4,9 @@ using BE_2505.DataAccess.Netcore.UnitOfWork;
 using BE_2505_NetCoreAPI.Filter;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace BE_2505_NetCoreAPI.Controllers
 {
@@ -19,19 +22,47 @@ namespace BE_2505_NetCoreAPI.Controllers
         //}
 
         private IUnitOfWork_BE_2505 _iunitOfWork;
+        private readonly IDistributedCache _cache;
 
-        public ProductController(IUnitOfWork_BE_2505 iunitOfWork)
+        public ProductController(IUnitOfWork_BE_2505 iunitOfWork, IDistributedCache cache)
         {
             _iunitOfWork = iunitOfWork;
+            _cache = cache;
         }
 
         [HttpPost("GetProduct")]
-        [BE_2505_Authorize("PRODUCT_GETLIST", "VIEW")]
+        // [BE_2505_Authorize("PRODUCT_GETLIST", "VIEW")]
         public async Task<ActionResult> GetProduct(ProductGetListRequestData requestData)
         {
+            var list = new List<Product>();
             try
             {
-                var list = await _iunitOfWork._productGenericRepository.GetAll();
+                var cacheKey = "GetProduct_Caching";
+
+                // Trying to get data from the Redis cache
+                byte[] cachedData = await _cache.GetAsync(cacheKey);
+
+                if (cachedData != null)
+                {
+                    // Trong cache có dữ liệu thì lấy luôn từ cache và trả về client
+                    var cachedDataString = Encoding.UTF8.GetString(cachedData);
+                    list = JsonConvert.DeserializeObject<List<Product>>(cachedDataString);
+                }
+                else
+                {
+                    // Nếu không có dữ liệu trong cache thì vào DB lấy và lưu lại vào cache
+
+                    list = await _iunitOfWork._productGenericRepository.GetAll();
+
+                    var cachedDataString = JsonConvert.SerializeObject(list);
+                    var dataToCache = Encoding.UTF8.GetBytes(cachedDataString);
+
+                    DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
+                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(5))
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(3));
+
+                    await _cache.SetAsync(cacheKey, dataToCache, options);
+                }
                 return Ok(list);
             }
             catch (Exception ex)

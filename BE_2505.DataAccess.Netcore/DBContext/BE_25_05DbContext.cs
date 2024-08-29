@@ -22,5 +22,6 @@ namespace BE_2505.DataAccess.Netcore.DBContext
         public DbSet<Account> account { get; set; }
         public DbSet<Function> function { get; set; }
         public DbSet<Permission> permission { get; set; }
+        public DbSet<User_Session> user_session { get; set; }
     }
 }

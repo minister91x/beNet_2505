@@ -56,56 +56,60 @@ namespace BE_2505_NetCoreAPI.Filter
                 return;
             }
 
-            // lấy functionID Theo function code 
-            var function = await _accountDAO.Function_GetByCode(_functionCode);
-            if (function == null || function.FunctionID <= 0)
+            if (_functionCode != "DEFAULT")
             {
-                context.HttpContext.Response.ContentType = "application/json";
-                context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
-                context.Result = new JsonResult(new
-                {
-                    Code = System.Net.HttpStatusCode.Unauthorized,
-                    Message = "Không tồn tại chưc năng"
-                });
-                return;
-            }
-            // lấy permisson
-            var per = await _accountDAO.Permisson_GetByUserID(userid, function.FunctionID);
-            if (per == null || per.PermissionID <= 0)
-            {
-                context.HttpContext.Response.ContentType = "application/json";
-                context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
-                context.Result = new JsonResult(new
-                {
-                    Code = System.Net.HttpStatusCode.Unauthorized,
-                    Message = "Không tồn tại QUYÊN"
-                });
-                return;
-            }
 
-            switch (_permission)
-            {
-                case "VIEW":
-                    if (per.IsView == 0)
+                // lấy functionID Theo function code 
+                var function = await _accountDAO.Function_GetByCode(_functionCode);
+                if (function == null || function.FunctionID <= 0)
+                {
+                    context.HttpContext.Response.ContentType = "application/json";
+                    context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
+                    context.Result = new JsonResult(new
                     {
-                        context.HttpContext.Response.ContentType = "application/json";
-                        context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
-                        context.Result = new JsonResult(new
+                        Code = System.Net.HttpStatusCode.Unauthorized,
+                        Message = "Không tồn tại chưc năng"
+                    });
+                    return;
+                }
+                // lấy permisson
+                var per = await _accountDAO.Permisson_GetByUserID(userid, function.FunctionID);
+                if (per == null || per.PermissionID <= 0)
+                {
+                    context.HttpContext.Response.ContentType = "application/json";
+                    context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
+                    context.Result = new JsonResult(new
+                    {
+                        Code = System.Net.HttpStatusCode.Unauthorized,
+                        Message = "Không tồn tại QUYÊN"
+                    });
+                    return;
+                }
+
+                switch (_permission)
+                {
+                    case "VIEW":
+                        if (per.IsView == 0)
                         {
-                            Code = System.Net.HttpStatusCode.Unauthorized,
-                            Message = "Bạn không có quyền"
-                        });
-                        return;
-                    }
-                    break;
+                            context.HttpContext.Response.ContentType = "application/json";
+                            context.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.Unauthorized;
+                            context.Result = new JsonResult(new
+                            {
+                                Code = System.Net.HttpStatusCode.Unauthorized,
+                                Message = "Bạn không có quyền"
+                            });
+                            return;
+                        }
+                        break;
 
-                case "INSERT":
+                    case "INSERT":
 
-                    break;
+                        break;
 
-                case "UPDATE":
+                    case "UPDATE":
 
-                    break;
+                        break;
+                }
             }
 
         }

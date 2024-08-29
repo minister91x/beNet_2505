@@ -1,5 +1,6 @@
 ﻿using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DTO;
+using BE_2505_NetCoreAPI.Filter;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -62,6 +63,29 @@ namespace BE_2505_NetCoreAPI.Controllers
                 var newToken = CreateToken(authClaims);
                 // Bước 2.2.1 tạo refeshtoken và lưu db
 
+                var IP = "";
+                var remoteIp = HttpContext.Connection.RemoteIpAddress;
+                if (remoteIp != null && remoteIp.IsIPv4MappedToIPv6)
+                {
+                    IP = remoteIp.MapToIPv4().ToString();
+                }
+                else
+                {
+                    IP = remoteIp?.ToString();
+                }
+
+                /// lưu token vào bảng Session
+                var session = new User_Session
+                {
+                    UserID = account.ID,
+                    CreatedTime = DateTime.Now,
+                    Token = new JwtSecurityTokenHandler().WriteToken(newToken),
+                    IP = IP,
+                    DeviceID = "DV"
+                };
+
+                _accountDAO.UserSessionInsert(session);
+
                 var RefreshTokenValidityInDays = _configuration["JWT:RefreshTokenValidityInDays"] ?? "";
                 var refeshtoken = GenerateRefreshToken();
                 var req = new AccountLogin_UpdateRefeshTokenRequestData
@@ -92,6 +116,42 @@ namespace BE_2505_NetCoreAPI.Controllers
         }
 
 
+
+        [HttpPost("Logout")]
+        [BE_2505_Authorize("DEFAULT", "VIEW")]
+        public async Task<ActionResult> LogOut(AccountLogOutRequestData requestData)
+        {
+            try
+            {
+                var IP = "";
+                var remoteIp = HttpContext.Connection.RemoteIpAddress;
+                if (remoteIp != null && remoteIp.IsIPv4MappedToIPv6)
+                {
+                    IP = remoteIp.MapToIPv4().ToString();
+                }
+                else
+                {
+                    IP = remoteIp?.ToString();
+                }
+
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var userClaims = identity.Claims;
+                var userid = Convert.ToInt32(userClaims.FirstOrDefault(x => x.Type == ClaimTypes.PrimarySid)?.Value);
+                var req = new AccountLogOutRequestData
+                {
+                    IP = IP,
+                    token = requestData.token,
+                };
+                var rs = await _accountDAO.UserSession_Logout(req, userid);
+
+                return Ok(rs);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         private string GenerateRefreshToken()
         {
             var randomNumber = new byte[64];

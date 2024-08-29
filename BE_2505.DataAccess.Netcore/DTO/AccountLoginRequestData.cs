@@ -14,7 +14,11 @@ namespace BE_2505.DataAccess.Netcore.DTO
         [Required(ErrorMessage = "Mật khẩu không được trống")]
         public string Password { get; set; }
     }
-
+    public class AccountLogOutRequestData
+    {
+        public string IP { get; set; }
+        public string token { get; set; }
+    }
     public class AccountLoginResponseData : ReturnData
     {
         public Account account { get; set; }
