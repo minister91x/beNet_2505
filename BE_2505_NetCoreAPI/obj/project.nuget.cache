@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MTDNzdAgJT8lEKrsN5DUdjuxSDIuF8pUJFsCrDQ7wi670Uq2YlK3qg3lXHrGtqEbEdaxHV3DLgeEVrLTPM9NjA==",
+  "dgSpecHash": "onOeaGFsBmmhKP0LF3hYVwx6T2OCwZuol/3Nbo9Ep2WMUgJ8qOwmvRyr1g0nI2+oDJsWwTXifgcNe86SUPjuzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505_NetCoreAPI\\BE_2505_NetCoreAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.33\\microsoft.aspnetcore.authentication.jwtbearer.6.0.33.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

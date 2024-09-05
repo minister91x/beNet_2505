@@ -1,5 +1,6 @@
 using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DALImpl;
+using BE_2505.DataAccess.Netcore.Dapper;
 using BE_2505.DataAccess.Netcore.DBContext;
 using BE_2505.DataAccess.Netcore.DTO;
 using BE_2505.DataAccess.Netcore.UnitOfWork;
@@ -37,10 +38,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IAccountDAO, AccountDAOImpl>();
+builder.Services.AddScoped<IAccountADO_DAL, AccountADO_ImplDAL>();
+builder.Services.AddScoped<IAccountDapper_DAL, AccountDapper_Impl>();
 builder.Services.AddScoped<IStudentDAL, StudentManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductGenericRepository, ProductGenericRepository>();
 builder.Services.AddScoped<IUnitOfWork_BE_2505, UnitOfWork_BE_2505>();
+builder.Services.AddScoped<IApplicationDbConnection, ApplicationDbConnection>();
 
 
 builder.Services.AddSwaggerGen(opt =>

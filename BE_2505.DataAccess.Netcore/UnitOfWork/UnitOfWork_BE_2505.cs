@@ -13,15 +13,20 @@ namespace BE_2505.DataAccess.Netcore.UnitOfWork
     {
         public IProductRepository _productRepository { get; set; }
         public IProductGenericRepository _productGenericRepository { get; set; }
+        public IAccountADO_DAL _accountADO { get; set; }
+        public IAccountDapper_DAL _accountDapper_DAL { get; set; }
 
         public BE_25_05DbContext _context;
 
         public UnitOfWork_BE_2505(IProductRepository productRepository, 
-            BE_25_05DbContext context, IProductGenericRepository productGenericRepository)
+            BE_25_05DbContext context, IProductGenericRepository productGenericRepository,
+            IAccountADO_DAL accountADO, IAccountDapper_DAL accountDapper_DAL)
         {
             _productRepository = productRepository;
             _productGenericRepository = productGenericRepository;
             _context = context;
+            _accountADO = accountADO;
+            _accountDapper_DAL = accountDapper_DAL;
         }
 
         public int SaveChange()

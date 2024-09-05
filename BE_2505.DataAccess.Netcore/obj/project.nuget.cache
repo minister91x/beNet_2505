@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IOt7AZhULKNyLKtZ+JA6ItE1IqEO/qeAgu32+XhvQcD+PYf/G+uyNBWRBcOj9ZgItBcnHpBX22IEkZ78F8VW/w==",
+  "dgSpecHash": "B596ex+M6gOJAW8tG8M9ji9dZvoh/N5QcpofQIg9grlYROLKTeBkxcM8kdYva14lR/CKOHWb7PzWdnm+pBJsdQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\BE_2505.DataAccess.Netcore\\BE_2505.DataAccess.Netcore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

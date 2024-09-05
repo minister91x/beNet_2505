@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wsB3PyBOGIOaU7fCm8AWMQfwWy/aXlFnEzPP/T89brdy6GJcK1ykXRX23FAU5xRlbc5C0Ch03nCPsRbfSBut4A==",
+  "dgSpecHash": "2SjYdIeNpmsWBFLwpjtMVKulIO+cfwejJlW02JGRTLjYI5ohAg40+Cos2X+9MuTknzER5DzIlBfiY099xqlYhA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\BE_2505\\WebMVC_NetCore\\WebMVC_NetCore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

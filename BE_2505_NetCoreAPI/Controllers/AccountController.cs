@@ -1,5 +1,6 @@
 ﻿using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DTO;
+using BE_2505.DataAccess.Netcore.UnitOfWork;
 using BE_2505_NetCoreAPI.Filter;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,12 @@ namespace BE_2505_NetCoreAPI.Controllers
     {
         private IAccountDAO _accountDAO;
         private IConfiguration _configuration;
-        public AccountController(IAccountDAO accountDAO, IConfiguration configuration)
+        private IUnitOfWork_BE_2505 _unitOfWork;
+        public AccountController(IAccountDAO accountDAO, IConfiguration configuration, IUnitOfWork_BE_2505 unitOfWork)
         {
             _accountDAO = accountDAO;
             _configuration = configuration;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -150,6 +153,37 @@ namespace BE_2505_NetCoreAPI.Controllers
             {
 
                 throw;
+            }
+        }
+
+
+        [HttpPost("GetAccounts")]
+        public async Task<ActionResult> GetAccounts(AccountGetListRequestData requestData)
+        {
+            try
+            {
+                //var rs = await _unitOfWork._accountADO.GetAccounts(requestData);
+                var rs = await _unitOfWork._accountDapper_DAL.GetAccounts(requestData);
+                return Ok(rs);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost("Account_Insert")]
+        public async Task<ActionResult> Account_Insert(AccountInsertRequestData requestData)
+        {
+            try
+            {
+                var rs = await _unitOfWork._accountADO.Account_Insert(requestData);
+
+                return Ok(rs);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
         private string GenerateRefreshToken()
