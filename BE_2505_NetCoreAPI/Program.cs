@@ -1,10 +1,11 @@
-using BE_2505.DataAccess.Netcore.DAL;
+﻿using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DALImpl;
 using BE_2505.DataAccess.Netcore.Dapper;
 using BE_2505.DataAccess.Netcore.DBContext;
 using BE_2505.DataAccess.Netcore.DTO;
 using BE_2505.DataAccess.Netcore.UnitOfWork;
 using BE_2505_NetCoreAPI;
+using BE_2505_NetCoreAPI.Logging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -17,7 +18,7 @@ var configuration = builder.Configuration;
 // Add services to the container.
 
 builder.Services.AddControllers();
-
+NLog.LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/NLog.config"));
 builder.Services.AddDbContext<BE_25_05DbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -45,6 +46,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductGenericRepository, ProductGenericRepository>();
 builder.Services.AddScoped<IUnitOfWork_BE_2505, UnitOfWork_BE_2505>();
 builder.Services.AddScoped<IApplicationDbConnection, ApplicationDbConnection>();
+builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
 
 
 builder.Services.AddSwaggerGen(opt =>
@@ -75,6 +77,9 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = configuration["RedisCacheUrl"]; });
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var app = builder.Build();
 

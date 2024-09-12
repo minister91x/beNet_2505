@@ -2,9 +2,11 @@
 using BE_2505.DataAccess.Netcore.DTO;
 using BE_2505.DataAccess.Netcore.UnitOfWork;
 using BE_2505_NetCoreAPI.Filter;
+using BE_2505_NetCoreAPI.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -19,11 +21,18 @@ namespace BE_2505_NetCoreAPI.Controllers
         private IAccountDAO _accountDAO;
         private IConfiguration _configuration;
         private IUnitOfWork_BE_2505 _unitOfWork;
-        public AccountController(IAccountDAO accountDAO, IConfiguration configuration, IUnitOfWork_BE_2505 unitOfWork)
+        private readonly ILogger<AccountController> _logger;
+        private readonly ILoggerManager _loggerManager;
+
+
+        public AccountController(IAccountDAO accountDAO, IConfiguration configuration,
+            IUnitOfWork_BE_2505 unitOfWork, ILogger<AccountController> logger, ILoggerManager loggerManager)
         {
             _accountDAO = accountDAO;
             _configuration = configuration;
             _unitOfWork = unitOfWork;
+            _logger = logger;
+            _loggerManager = loggerManager;
         }
 
 
@@ -32,9 +41,11 @@ namespace BE_2505_NetCoreAPI.Controllers
         public async Task<ActionResult> Login(AccountLoginRequestData requestData)
         {
             var returnData = new AccountLoginResponseData();
+            var logID = DateTime.Now.Ticks;
             try
             {
                 // Bước 1: Login
+                _loggerManager.LogInfo("logID: " + logID + "| " + DateTime.Now.ToString("dd/MM/yyyy hh:MM:ss") + "| requestData :" + JsonConvert.SerializeObject(requestData));
 
                 if (requestData == null
                     || string.IsNullOrEmpty(requestData.UserName)

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BE_2505.DataAccess.Netcore.DALImpl
 {
-    public class AccountDapper_Impl : BaseApplicationService, IAccountADO_DAL
+    public class AccountDapper_Impl : BaseApplicationService, IAccountDapper_DAL
     {
         public AccountDapper_Impl(IServiceProvider serviceProvider) : base(serviceProvider)
         {
