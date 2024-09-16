@@ -14,7 +14,6 @@ C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_NetCoreAPI.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_NetCoreAPI.AssemblyInfo.cs
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_NetCoreAPI.csproj.CoreCompileInputs.cache
-C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_NetCoreAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\BE_2505_NetCoreAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\obj\Debug\net6.0\staticwebassets.development.json
@@ -77,3 +76,9 @@ C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Dapper.d
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\NLog.config
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\NLog.dll
 C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Application.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Domain.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Application.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Domain.pdb
+C:\Users\Admin\source\repos\BE_2505\BE_2505_NetCoreAPI\bin\Debug\net6.0\Infrastructure.pdb

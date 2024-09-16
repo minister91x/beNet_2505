@@ -1,4 +1,6 @@
-﻿using BE_2505.DataAccess.Netcore.DAL;
+﻿using Application.IRepository;
+using Application.Repository;
+using BE_2505.DataAccess.Netcore.DAL;
 using BE_2505.DataAccess.Netcore.DALImpl;
 using BE_2505.DataAccess.Netcore.Dapper;
 using BE_2505.DataAccess.Netcore.DBContext;
@@ -6,6 +8,8 @@ using BE_2505.DataAccess.Netcore.DTO;
 using BE_2505.DataAccess.Netcore.UnitOfWork;
 using BE_2505_NetCoreAPI;
 using BE_2505_NetCoreAPI.Logging;
+using Infrastructure.DBContext;
+using Infrastructure.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -19,7 +23,7 @@ var configuration = builder.Configuration;
 
 builder.Services.AddControllers();
 NLog.LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/NLog.config"));
-builder.Services.AddDbContext<BE_25_05DbContext>(options =>
+builder.Services.AddDbContext<CleanCodeDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -38,17 +42,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<IAccountDAO, AccountDAOImpl>();
-builder.Services.AddScoped<IAccountADO_DAL, AccountADO_ImplDAL>();
-builder.Services.AddScoped<IAccountDapper_DAL, AccountDapper_Impl>();
-builder.Services.AddScoped<IStudentDAL, StudentManager>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductGenericRepository, ProductGenericRepository>();
-builder.Services.AddScoped<IUnitOfWork_BE_2505, UnitOfWork_BE_2505>();
+//builder.Services.AddTransient<IAccountDAO, AccountDAOImpl>();
+//builder.Services.AddScoped<IAccountADO_DAL, AccountADO_ImplDAL>();
+//builder.Services.AddScoped<IAccountDapper_DAL, AccountDapper_Impl>();
+//builder.Services.AddScoped<IStudentDAL, StudentManager>();
+//builder.Services.AddScoped<IProductRepository, ProductRepository>();
+//builder.Services.AddScoped<IProductGenericRepository, ProductGenericRepository>();
+//builder.Services.AddScoped<IUnitOfWork_BE_2505, UnitOfWork_BE_2505>();
 builder.Services.AddScoped<IApplicationDbConnection, ApplicationDbConnection>();
 builder.Services.AddSingleton<ILoggerManager, LoggerManager>();
-
-
+builder.Services.AddTransient<IAccountApplication, AccountApplication>();
+builder.Services.AddTransient<IAccountInfrastructure, AccountInfrastructureImpl>();
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
